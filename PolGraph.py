@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('PolarisTest/D.csv')
+df = pd.read_csv('PolarisTest/Test0.csv')
 print("Columns:", df.columns.tolist())
 print("Shape:", df.shape)
 print(df.head(10))
@@ -88,7 +88,7 @@ ax_map.plot(0, 0, marker='+', color='black', markersize=14, markeredgewidth=2.5,
 ax_map.plot(mean_ab_x, mean_ab_y, marker='X', color='darkorange', markeredgecolor='black', markersize=12, linestyle='None', label=f'Média Pré ({mean_ab_x:.4f}, {mean_ab_y:.4f})')
 ax_map.plot(mean_fe_x, mean_fe_y, marker='o', color='darkgreen', markeredgecolor='black', markersize=10, linestyle='None', label=f'Média Pós ({mean_fe_x:.4f}, {mean_fe_y:.4f})')
 
-circle_ab = plt.Circle((mean_ab_x, mean_ab_y), df_ab['r_pos_real'].std(), color='darkorange', fill=False, linestyle='-', lw=2, label=f'1σ Raio Pré ({df_ab["r_pos_real"].std():.3f})')
+circle_ab = plt.Circle((mean_ab_x, mean_ab_y), df_ab['r_pos_real'].std(), color='red', fill=False, linestyle='-', lw=2, label=f'1σ Raio Pré ({df_ab["r_pos_real"].std():.3f})')
 circle_fe = plt.Circle((mean_fe_x, mean_fe_y), df_fe['r_pos_real'].std(), color='darkgreen', fill=False, linestyle='-', lw=2, label=f'1σ Raio Pós ({df_fe["r_pos_real"].std():.3f})')
 ax_map.add_patch(circle_ab)
 ax_map.add_patch(circle_fe)
@@ -125,8 +125,8 @@ ax_osc.set_ylabel('Posição / Distância ao Centro')
 ax_osc.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('analise_controle_D.png', dpi=150)
-print("Saved analise_controle_D.png successfully.")
+plt.savefig('PolarisTest/analise_controle_0.png', dpi=150)
+print("Saved analise_controle_0.png successfully.")
 
 df_ab_end = df_ab.tail(1000)
 print("Últimas 1000 amostras do modo Aberto (média x, y):", df_ab_end['x_pos_real'].mean(), df_ab_end['y_pos_real'].mean())

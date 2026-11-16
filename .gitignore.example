@@ -1,0 +1,11 @@
+# ************************************************
+# * Arquivo de template para criação do .gitignore
+# * Basta renomear e tirar o .example
+# *
+# ************************************************
+
+.gitignore
+crash_log.txt
+jacobiana_polaris.json
+polaris_gui_config.json
+TestOut/

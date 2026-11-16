@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('PolarisTest/Test0.csv')
+filename = "Teste_simples"
+
+df = pd.read_csv(f'new/{filename}.csv')
 print("Columns:", df.columns.tolist())
 print("Shape:", df.shape)
 print(df.head(10))
@@ -125,8 +127,8 @@ ax_osc.set_ylabel('Posição / Distância ao Centro')
 ax_osc.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('PolarisTest/analise_controle_0.png', dpi=150)
-print("Saved analise_controle_0.png successfully.")
+plt.savefig(f'PolarisTest/analise_{filename}.png', dpi=150)
+print(f"Saved analise_{filename}.png successfully.")
 
 df_ab_end = df_ab.tail(1000)
 print("Últimas 1000 amostras do modo Aberto (média x, y):", df_ab_end['x_pos_real'].mean(), df_ab_end['y_pos_real'].mean())
